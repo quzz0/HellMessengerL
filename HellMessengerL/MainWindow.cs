@@ -6,7 +6,7 @@ using HellMessengerL;
 
 public partial class MainWindow: Gtk.Window
 {	
-	public Gtk.ListStore messageListStore;
+	public Gtk.ListStore messagesListStore;
 	public Chat chat = new Chat();
 
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
@@ -48,11 +48,11 @@ public partial class MainWindow: Gtk.Window
 		userColumn.AddAttribute (userCell, "text", 0);
 		messageColumn.AddAttribute (messageCell, "text", 1);
 
-		messageListStore = new Gtk.ListStore (typeof (string), typeof (string));
+		messagesListStore = new Gtk.ListStore (typeof (string), typeof (string));
 
-		//messageListStore.AppendValues ("nullbyte", "Hello World");
+		//messageListStore.AppendValues ("Username", "Hello World");
 
-		chatTree.Model = messageListStore;
+		chatTree.Model = messagesListStore;
 		messagesPanel.ShowAll ();
 	}
 
@@ -62,7 +62,7 @@ public partial class MainWindow: Gtk.Window
 		string text = sendText.Buffer.Text;
 		if(username.Length > 0 && text.Length > 0 && 
 		   chat.sendMessage(new Message() { Username =  username, Text = text }))
-			messageListStore.AppendValues (username, text);
+			messagesListStore.AppendValues (username, text);
 		
 	}
 
