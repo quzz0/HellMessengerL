@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/HellMessengerL.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="867 600">
+    <property name="MemberName" />
+    <property name="WidthRequest">800</property>
+    <property name="HeightRequest">600</property>
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="chatPanel">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="messagesPanel">
+            <property name="MemberName" />
+            <property name="WidthRequest">830</property>
+            <property name="HeightRequest">450</property>
+            <property name="Sensitive">False</property>
+            <property name="ShadowType">In</property>
+          </widget>
+          <packing>
+            <property name="X">20</property>
+            <property name="Y">50</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="sendPanel">
+            <property name="MemberName" />
+            <property name="WidthRequest">730</property>
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="sendText">
+                <property name="MemberName" />
+                <property name="Sensitive">False</property>
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Text" translatable="yes" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">20</property>
+            <property name="Y">530</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="sendButton">
+            <property name="MemberName" />
+            <property name="WidthRequest">80</property>
+            <property name="Sensitive">False</property>
+            <property name="CanFocus">True</property>
+            <property name="Events">ButtonReleaseMask</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Send</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">770</property>
+            <property name="Y">530</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="sendLabel">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Message:</property>
+          </widget>
+          <packing>
+            <property name="X">20</property>
+            <property name="Y">508</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="usernameLabel">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Username:</property>
+          </widget>
+          <packing>
+            <property name="X">20</property>
+            <property name="Y">10</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="connectButton">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Connect</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">275</property>
+            <property name="Y">5</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="usernameBox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+          </widget>
+          <packing>
+            <property name="X">100</property>
+            <property name="Y">5</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
